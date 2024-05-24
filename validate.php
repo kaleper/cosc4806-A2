@@ -1,7 +1,14 @@
 <?php
-
   // Initialize session
   session_start();
+
+  require_once ('user.php');
+
+  // Creates an instance of User
+  $user = new user();
+  
+  // Get's all users from database
+  $user_list = $user->get_all_users();
 
   // Hardcoded credentials
   $validUsername = "kalen";
