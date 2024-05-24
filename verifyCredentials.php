@@ -27,6 +27,25 @@ Class VerifyCredentials {
     return $rows;
   }
 
+  public function verify_credentials($username, $password) {
+    // Establish connection to database
+    $db = db_connect();
+
+    // Prepared statement for MariaDB
+    $statement = $db->prepare("SELECT id, username, password FROM users WHERE username = :username");
+    
+     // Binds parameters from login attempt
+    $statement->bindParam(':username', $username);
+ 
+    // Executes on the filess.io end
+    $statement->execute();
+
+    // Retrieves credentials from filess.io database
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
+    
+    return $row;
+  }
+
   public function create_user ($username, $password) {
     // TODO: Finish Function
   }

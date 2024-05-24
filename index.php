@@ -38,18 +38,19 @@ require_once('verifyCredentials.php');
 // Creates an instance of verifyCredentials
 $verifyCredentials = new VerifyCredentials();
 
-// Get's all users from database
-$user_list = $verifyCredentials->get_all_users();
+$credentials = $verifyCredentials->verify_credentials("kalen", "replit");
+        if ($credentials) {
+          echo "Username exists";
+        } else {
+          echo "Username does not exist";
+        }
 
-//  ***TEST CODE***
-print_r ($user_list);
+echo "<br>";
         
-// Get's all passwords from database
-$password_list = $verifyCredentials->get_all_passwords();
-
-//  ***TEST CODE***
-print_r ($password_list);
-
+  //  ***TEST CODE***
+  print_r ($credentials);
 ?>
+
+
 
         

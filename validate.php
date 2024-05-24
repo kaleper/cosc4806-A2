@@ -2,13 +2,13 @@
   // Initialize session
   session_start();
 
-  require_once ('user.php');
+  require_once ('verifyCredentials.php');
 
   // Creates an instance of User
-  $user = new user();
+  $verifyCredentials = new verifyCredentials();
   
   // Get's all users from database
-  $user_list = $user->get_all_users();
+  $user_list = $verifyCredentials->get_all_users();
 
   // Hardcoded credentials
   $validUsername = "kalen";
