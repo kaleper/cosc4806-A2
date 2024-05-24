@@ -1,8 +1,9 @@
 <?php
   // Initialize session
-  session_start();
+session_start();
 
   require_once ('verifyCredentials.php');
+  require_once ('hashPassword.php');
 
   // Creates an instance of User
   $verifyCredentials = new verifyCredentials();
@@ -37,4 +38,8 @@
 
       header ('location: /login.php');
   }
-?>
+
+// *************** TEST AREA ****************
+  $test_password = hash_password($password);
+  $_SESSION['test_password'] = $test_password;
+?> 

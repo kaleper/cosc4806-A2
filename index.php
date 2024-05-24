@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
   // If user is not authenticated, redirects to login page
@@ -38,17 +37,25 @@ require_once('verifyCredentials.php');
 // Creates an instance of verifyCredentials
 $verifyCredentials = new VerifyCredentials();
 
-$credentials = $verifyCredentials->verify_credentials("kalen", "replit");
+$credentials = $verifyCredentials->verify_username("kalen");
         if ($credentials) {
           echo "Username exists";
         } else {
           echo "Username does not exist";
         }
 
+        
 echo "<br>";
         
   //  ***TEST CODE***
   print_r ($credentials);
+
+echo "<br>";
+
+
+  //  ***TEST HASHED PASSWORD***
+echo "Hashed password: ".$_SESSION['test_password'];
+  
 ?>
 
 

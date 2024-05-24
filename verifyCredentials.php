@@ -27,7 +27,7 @@ Class VerifyCredentials {
     return $rows;
   }
 
-  public function verify_credentials($username, $password) {
+  public function verify_username($username) {
     // Establish connection to database
     $db = db_connect();
 
@@ -46,6 +46,9 @@ Class VerifyCredentials {
     return $row;
   }
 
+  public function verify_password($password) {
+    
+  }
   public function create_user ($username, $password) {
     // TODO: Finish Function
   }

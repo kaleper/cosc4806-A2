@@ -1,5 +1,5 @@
 <?php
-  session_start();
+session_start();
 
 
   // If user is already logged in, redirects to index.php
