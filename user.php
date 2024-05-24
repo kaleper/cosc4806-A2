@@ -17,5 +17,7 @@ Class User {
     return $rows;
   }
 
-  
+  public function create_user ($username, $password) {
+    // TODO: Finish Function
+  }
 }
