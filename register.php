@@ -1,12 +1,16 @@
 <?php 
+
 session_start();
 
 // Uses session variable from registerToDatabase to display if username has already been taken
 if (isset($_SESSION['taken_username_message'])) {
+
     echo $_SESSION['taken_username_message']; 
     unset($_SESSION['taken_username_message']); 
 }
-  ?>
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -42,5 +46,3 @@ if (isset($_SESSION['taken_username_message'])) {
     </div>
   </body>
 </html>
-
-
