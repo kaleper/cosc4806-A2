@@ -38,5 +38,9 @@ session_start();
       <br><br>
       <input type="submit" value= "Submit">
     </form>
+    <br>
+    <div id="registration-container">
+      <a href= "/register.php">Register</a>
+    </div>
   </body>
 </html>

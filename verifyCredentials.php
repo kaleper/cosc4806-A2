@@ -49,7 +49,4 @@ Class VerifyCredentials {
   public function verify_password($password) {
     
   }
-  public function create_user ($username, $password) {
-    // TODO: Finish Function
-  }
 }
