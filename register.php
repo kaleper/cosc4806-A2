@@ -1,3 +1,13 @@
+<?php 
+session_start();
+
+// Uses session variable from registerToDatabase to display if username has already been taken
+if (isset($_SESSION['taken_username_message'])) {
+    echo $_SESSION['taken_username_message']; 
+    unset($_SESSION['taken_username_message']); 
+}
+  ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,6 +16,7 @@
   <body>
 
     <h1>Register</h1>
+    
     <!-- Form to enter new credentials to sign up -->
     <form action ="/registerToDatabase.php" method="post">
       <label for="username">Enter a Username</label>
@@ -31,3 +42,5 @@
     </div>
   </body>
 </html>
+
+

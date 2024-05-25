@@ -32,7 +32,7 @@ Class VerifyCredentials {
     $db = db_connect();
 
     // Prepared statement for MariaDB
-    $statement = $db->prepare("SELECT id, username, password FROM users WHERE username = :username");
+    $statement = $db->prepare("SELECT username FROM users WHERE username = :username");
     
      // Binds parameters from login attempt
     $statement->bindParam(':username', $username);
