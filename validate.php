@@ -4,6 +4,7 @@ session_start();
 
   require_once ('verifyCredentials.php');
   require_once ('hashPassword.php');
+  
 
   // Creates an instance of User
   $verifyCredentials = new verifyCredentials();
