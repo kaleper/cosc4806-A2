@@ -10,14 +10,21 @@
     <form action ="/registerToDatabase.php" method="post">
       <label for="username">Enter a Username</label>
       <br>
-      <input type="text" id="username" name ="username">
+      <input type="text" id="username" name ="username" pattern=".{3,}" title="Please enter a valid username." required>
       <br>
       <label for="password">Enter a Password</label>
       <br>
-      <input type="password" id='password' name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w\d\s]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, one symbol and a length of 8 characters" required>
+      <input type="password" id='password' name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w\d\s]).{8,}" title="Please enter a valid password." required>
+      
+      
       <br><br>
       <input type="submit" value= "Sign-Up">
     </form>
+
+
+    <div id="username-requirements">Username must be at least 3 characters long</span>
+    <div id="password-requirements">Must contain at least one number, one uppercase and lowercase leter, one symbol and a length of 8 characters</span>
+    
     <br>
     <div id="login-container">
       <a href= "/login.php">Login</a>
