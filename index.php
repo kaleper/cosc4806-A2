@@ -45,12 +45,7 @@ $credentials = $verifyCredentials->verify_username("kalen");
         }
 
         
-echo "<br>";
-        
-  //  ***TEST CODE***
-  print_r ($credentials);
 
-echo "<br>";
 
 ?>
 

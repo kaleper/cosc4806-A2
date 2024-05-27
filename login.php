@@ -17,6 +17,10 @@ session_start();
           "</p>";
     }; 
 
+  if (isset($_SESSION['registration_success_message'])) {
+    echo $_SESSION['registration_success_message'];
+  }
+
   // ***TEST***
 if (isset($_SESSION['validUsername'])) {
   var_dump($_SESSION['validUsername']);
