@@ -8,9 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $username = $_POST['username'];
   $password = $_POST['password'];
 
+  // Transforms password into non-plain text for security reasons
+  $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
   $verifyCredentials = new VerifyCredentials();
   $usernameExists = $verifyCredentials->verify_username($username);
-  
   
   // Checks if a username exists already
   if ($usernameExists) {
@@ -21,12 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   } else {
     $db = db_connect();
 
-    // Prepared statement to insert username and password into database
-    $statement = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+    // Prepared statement to insert username and hashed password into database
+    $statement = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :hashedPassword)");
 
     // Binds parameters from registration
     $statement->bindParam(':username', $username);
-    $statement->bindParam(':password', $password);
+    $statement->bindParam(':hashedPassword', $hashedPassword);
 
     // Executes the statement
     $statement->execute();
