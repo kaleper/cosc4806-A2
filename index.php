@@ -27,28 +27,3 @@ session_start();
       <p> <a href="/logout.php">Log Out</p>
   </footer>
 </html>
-
-
-        
-<?php 
-// -----------------TESTING PURPOSES -----------------
-require_once('verifyCredentials.php');
-
-// Creates an instance of verifyCredentials
-$verifyCredentials = new VerifyCredentials();
-
-$credentials = $verifyCredentials->verify_username("kalen");
-        if ($credentials) {
-          echo "Username exists";
-        } else {
-          echo "Username does not exist";
-        }
-
-        
-
-
-?>
-
-
-
-        

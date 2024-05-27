@@ -1,36 +1,29 @@
 <?php
 session_start();
 
-
   // If user is already logged in, redirects to index.php
   if (isset($_SESSION['authenticated'])) {
-    header ("location:/");
-    // Exits script after redirecting
+    header ("location: /");
+    // Prevents additional page code from executing
     exit;
   }
 
   // Displays invalid login attempts, if any
   if (isset($_SESSION['failedAttempts'])) {
-     echo "<p>
+    echo "<p>
             Invalid credentials entered. 
             Number of failed login attempts: " . $_SESSION['failedAttempts'] .
           "</p>";
+    // Unsets session variable so that it is only displayed once
+    unset($_SESSION['failedAttempts']);
     }; 
 
+  // Confirms successful reigstration after being redirected back to login.php from registerToDatabase.php
   if (isset($_SESSION['registration_success_message'])) {
     echo $_SESSION['registration_success_message'];
+    // Unsets session variable so that it is only displayed once
+    unset($_SESSION['registration_success_message']);
   }
-
-  // ***TEST***
-if (isset($_SESSION['validUsername'])) {
-  var_dump($_SESSION['validUsername']);
-}
-if (isset($_SESSION['validPassword'])) {
- var_dump($_SESSION['validPassword']);
-}
-if (isset($_SESSION['hashedPassword'])) {
- var_dump($_SESSION['hashedPassword']);
-}
 ?>
 
 <!DOCTYPE html>
