@@ -16,6 +16,17 @@ session_start();
             Number of failed login attempts: " . $_SESSION['failedAttempts'] .
           "</p>";
     }; 
+
+  // ***TEST***
+if (isset($_SESSION['validUsername'])) {
+  var_dump($_SESSION['validUsername']);
+}
+if (isset($_SESSION['validPassword'])) {
+ var_dump($_SESSION['validPassword']);
+}
+if (isset($_SESSION['hashedPassword'])) {
+ var_dump($_SESSION['hashedPassword']);
+}
 ?>
 
 <!DOCTYPE html>

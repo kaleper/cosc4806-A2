@@ -52,10 +52,6 @@ echo "<br>";
 
 echo "<br>";
 
-
-  //  ***TEST HASHED PASSWORD***
-echo "Hashed password: ".$_SESSION['test_password'];
-  
 ?>
 
 
